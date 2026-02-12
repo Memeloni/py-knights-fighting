@@ -10,8 +10,8 @@ class Knight:
         self.protection = 0
 
     def prepare_for_battle(self) -> "Knight":
-        for a in self.armour:
-            self.protection += a["protection"]
+        for arm_point in self.armour:
+            self.protection += arm_point["protection"]
 
         self.power += self.weapon["power"]
 
