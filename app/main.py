@@ -1,9 +1,12 @@
-from modules.knights_configs import KNIGHTS
-from modules.knights import Knight
+from preparations.knights_configs import KNIGHTS
+from preparations.knights import Knight
 
 
 def battle(knights_config: dict) -> dict:
-    knights = [Knight(config).prepare_for_battle() for config in knights_config.values()]
+    knights = [
+        Knight(config).prepare_for_battle()
+        for config in knights_config.values()
+    ]
     lancelot, arthur, mordred, red_knight = knights
 
     # 1 Lancelot vs Mordred:
@@ -22,6 +25,6 @@ def battle(knights_config: dict) -> dict:
         red_knight.name: red_knight.hp,
     }
 
+
 if "__main__" == __name__:
     knights_config = KNIGHTS
-    print(battle(knights_config))
